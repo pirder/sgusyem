@@ -44,7 +44,8 @@ namespace MyProject
 
         private void 系统管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmUserManager f = new FrmUserManager();
+            f.Show();
         }
         //尝试一下是否拉去成功
          
