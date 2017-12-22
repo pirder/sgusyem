@@ -83,7 +83,6 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(205, 25);
             this.txtNum.TabIndex = 6;
-            this.txtNum.Text = "123";
             // 
             // txtPassword
             // 

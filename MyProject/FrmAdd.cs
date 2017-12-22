@@ -110,7 +110,7 @@ namespace MyProject
           //  grant_inform_image.Visible = false;
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Administrator\Desktop\MyProject\MyProject\Database1.accdb;Persist Security Info=False");//创建数据库联接，这用利用的access数据库
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=patent.accdb;Persist Security Info=False");//创建数据库联接，这用利用的access数据库
                 con.Open();
                 OleDbCommand command = con.CreateCommand();
                 OleDbCommand command1 = con.CreateCommand();
