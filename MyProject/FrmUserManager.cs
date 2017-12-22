@@ -41,7 +41,7 @@ namespace MyProject
 
         private void FrmUserManager_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+
         }
     }
 }
