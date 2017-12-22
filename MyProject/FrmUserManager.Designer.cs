@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUserManager));
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.ColumnUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUserNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +127,7 @@
             this.Controls.Add(this.txtnumsearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUserManager";
             this.Text = "用户管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUserManager_FormClosing);
