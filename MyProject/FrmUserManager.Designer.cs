@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
+            this.ColumnUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUserNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtnumsearch = new System.Windows.Forms.TextBox();
             this.searchallbtn = new System.Windows.Forms.Button();
             this.searchnumbtn = new System.Windows.Forms.Button();
-            this.ColumnUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUserNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,42 +59,6 @@
             this.dataGridViewUser.Size = new System.Drawing.Size(604, 275);
             this.dataGridViewUser.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "单个手机号查找：";
-            // 
-            // txtnumsearch
-            // 
-            this.txtnumsearch.Location = new System.Drawing.Point(162, 45);
-            this.txtnumsearch.Name = "txtnumsearch";
-            this.txtnumsearch.Size = new System.Drawing.Size(170, 25);
-            this.txtnumsearch.TabIndex = 2;
-            // 
-            // searchallbtn
-            // 
-            this.searchallbtn.Location = new System.Drawing.Point(13, 114);
-            this.searchallbtn.Name = "searchallbtn";
-            this.searchallbtn.Size = new System.Drawing.Size(143, 32);
-            this.searchallbtn.TabIndex = 3;
-            this.searchallbtn.Text = "查找所有用户";
-            this.searchallbtn.UseVisualStyleBackColor = true;
-            this.searchallbtn.Click += new System.EventHandler(this.searchallbtn_Click);
-            // 
-            // searchnumbtn
-            // 
-            this.searchnumbtn.Location = new System.Drawing.Point(338, 45);
-            this.searchnumbtn.Name = "searchnumbtn";
-            this.searchnumbtn.Size = new System.Drawing.Size(75, 25);
-            this.searchnumbtn.TabIndex = 4;
-            this.searchnumbtn.Text = "查找";
-            this.searchnumbtn.UseVisualStyleBackColor = true;
-            this.searchnumbtn.Click += new System.EventHandler(this.searchnumbtn_Click);
-            // 
             // ColumnUserName
             // 
             this.ColumnUserName.DataPropertyName = "users_name";
@@ -115,6 +79,42 @@
             this.ColumnUserPassword.HeaderText = "用户密码";
             this.ColumnUserPassword.Name = "ColumnUserPassword";
             this.ColumnUserPassword.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "单个手机号查找：";
+            // 
+            // txtnumsearch
+            // 
+            this.txtnumsearch.Location = new System.Drawing.Point(162, 45);
+            this.txtnumsearch.Name = "txtnumsearch";
+            this.txtnumsearch.Size = new System.Drawing.Size(170, 25);
+            this.txtnumsearch.TabIndex = 2;
+            // 
+            // searchallbtn
+            // 
+            this.searchallbtn.Location = new System.Drawing.Point(12, 121);
+            this.searchallbtn.Name = "searchallbtn";
+            this.searchallbtn.Size = new System.Drawing.Size(143, 32);
+            this.searchallbtn.TabIndex = 3;
+            this.searchallbtn.Text = "查找所有用户";
+            this.searchallbtn.UseVisualStyleBackColor = true;
+            this.searchallbtn.Click += new System.EventHandler(this.searchallbtn_Click);
+            // 
+            // searchnumbtn
+            // 
+            this.searchnumbtn.Location = new System.Drawing.Point(338, 45);
+            this.searchnumbtn.Name = "searchnumbtn";
+            this.searchnumbtn.Size = new System.Drawing.Size(75, 25);
+            this.searchnumbtn.TabIndex = 4;
+            this.searchnumbtn.Text = "查找";
+            this.searchnumbtn.UseVisualStyleBackColor = true;
+            this.searchnumbtn.Click += new System.EventHandler(this.searchnumbtn_Click);
             // 
             // FrmUserManager
             // 
