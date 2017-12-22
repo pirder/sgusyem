@@ -1040,7 +1040,7 @@ namespace MyProject
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAdd f = new FrmAdd();
-          xxx  f.Show();
+            f.Show();
         }
 
         private void label14_Click(object sender, EventArgs e)
