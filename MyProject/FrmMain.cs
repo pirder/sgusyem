@@ -51,7 +51,7 @@ namespace MyProject
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAdd f = new FrmAdd();
-           // f.Show();
+            f.Show();
 
         }
     }
