@@ -85,8 +85,7 @@ namespace MyProject
         {
             StringBuilder sql = new StringBuilder();
             StringBuilder date = new StringBuilder();
-            DataTable dt = new DataTable();        
-            
+            DataTable dt = new DataTable();          
             string patentnum = txtPatentNum.Text;
             string patenttype = comboPatentType.Text;
             string designer = txtDesiner.Text;
@@ -320,8 +319,19 @@ namespace MyProject
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
             dt = Program.GetDataTable(sql.ToString());
-            dataGridView1.DataSource = dt;
-          //  dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DataGridViewRow dr = new DataGridViewRow();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dr = dt.Rows[i];
+                if (dr["institute_name"].ToString().Equals("无"))
+                {
+                    DataGridViewButtonCell dgvbc = new DataGridViewButtonCell();
+                    dgvbc.Value = "查看";
+                    dr.Cells.Add(dgvbc);
+                }
+                    comboInstitute.Items.Add(instituteName);
+            }
+            //  dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(81, 125, 191);
             if (dataGridView1.Rows.Count == 0)              
                 MessageBox.Show("没有符合条件的数据");
