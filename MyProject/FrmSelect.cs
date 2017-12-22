@@ -1010,6 +1010,7 @@ namespace MyProject
             bool delresult = Program.ExecuteSql(sql);
             if (delresult)
             {
+                btnSearch_Click(null, null);
                 MessageBox.Show("已删除《" + delstrshow + "》该项专利申请");
             }
             else

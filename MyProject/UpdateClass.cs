@@ -19,7 +19,10 @@ namespace MyProject
         public static string uconfirm_date;//备案日期
         public static string uinstitute_num;//学院id
         public static string uisgrant;//是否授权
-        public static string ugifullname;
-        public static string ucifullname;
+        public static string ugifullname;//授权图片
+        public static string ucifullname;//
+        public static string uusername;//用户名
+        public static string uusernum;//用户手机号
+        public static string uuserpassword;//密码
     }
 }

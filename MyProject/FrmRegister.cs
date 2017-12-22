@@ -66,5 +66,49 @@ namespace MyProject
             }
         }
 
+        private void txtRegisterName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRegisterPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRegisterNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void promptRegisterName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void promptRegisterPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void promptRegisterNum_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

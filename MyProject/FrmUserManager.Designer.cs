@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUserManager));
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.ColumnUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,28 +38,33 @@
             this.txtnumsearch = new System.Windows.Forms.TextBox();
             this.searchallbtn = new System.Windows.Forms.Button();
             this.searchnumbtn = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewUser
             // 
             this.dataGridViewUser.AllowUserToAddRows = false;
             this.dataGridViewUser.AllowUserToDeleteRows = false;
-            this.dataGridViewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridViewUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnUserName,
             this.ColumnUserNum,
             this.ColumnUserPassword});
-            this.dataGridViewUser.Location = new System.Drawing.Point(0, 159);
+            this.dataGridViewUser.Location = new System.Drawing.Point(-1, 159);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.ReadOnly = true;
             this.dataGridViewUser.RowTemplate.Height = 27;
-            this.dataGridViewUser.Size = new System.Drawing.Size(604, 275);
+            this.dataGridViewUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUser.Size = new System.Drawing.Size(605, 275);
             this.dataGridViewUser.TabIndex = 0;
+            this.dataGridViewUser.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewUser_CellMouseDown);
             // 
             // ColumnUserName
             // 
@@ -117,6 +123,37 @@
             this.searchnumbtn.UseVisualStyleBackColor = true;
             this.searchnumbtn.Click += new System.EventHandler(this.searchnumbtn_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除用户ToolStripMenuItem,
+            this.修改用户ToolStripMenuItem,
+            this.新增用户ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 82);
+            // 
+            // 删除用户ToolStripMenuItem
+            // 
+            this.删除用户ToolStripMenuItem.Name = "删除用户ToolStripMenuItem";
+            this.删除用户ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.删除用户ToolStripMenuItem.Text = "删除用户";
+            this.删除用户ToolStripMenuItem.Click += new System.EventHandler(this.删除用户ToolStripMenuItem_Click);
+            // 
+            // 新增用户ToolStripMenuItem
+            // 
+            this.新增用户ToolStripMenuItem.Name = "新增用户ToolStripMenuItem";
+            this.新增用户ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.新增用户ToolStripMenuItem.Text = "新增用户";
+            this.新增用户ToolStripMenuItem.Click += new System.EventHandler(this.新增用户ToolStripMenuItem_Click);
+            // 
+            // 修改用户ToolStripMenuItem
+            // 
+            this.修改用户ToolStripMenuItem.Name = "修改用户ToolStripMenuItem";
+            this.修改用户ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.修改用户ToolStripMenuItem.Text = "修改用户";
+            this.修改用户ToolStripMenuItem.Click += new System.EventHandler(this.修改用户ToolStripMenuItem_Click);
+            // 
             // FrmUserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -132,6 +169,7 @@
             this.Text = "用户管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUserManager_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +185,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserPassword;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 删除用户ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增用户ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 修改用户ToolStripMenuItem;
     }
 }
