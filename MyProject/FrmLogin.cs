@@ -35,6 +35,7 @@ namespace MyProject
         {
             string userNum = txtNum.Text;          
             string userPassword = txtPassword.Text;
+            txtPassword.Text = "123456";
             int limit = 1;
             bool resultnum = false;
             bool resultlimit = false;

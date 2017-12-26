@@ -14,10 +14,12 @@ namespace MyProject
 {
     public partial class FrmSelect : Form
     {
-
+        string gifullname = "无";
+        string cifullname = "无";
         public FrmSelect()
         {
             InitializeComponent();
+            
             string sqlinstitutecombo = "select institute_name from institute";
             DataTable dt = new DataTable();
             dt = Program.GetDataTable(sqlinstitutecombo);
@@ -109,6 +111,8 @@ namespace MyProject
             string grantdateendmonth = comboGrantDateEndMonth.Text;
             string grantdateendday = comboGrantDateEndDay.Text;
             string agency = comboAgency.Text;
+           
+
             sql.AppendLine("select patent_name,patent_type,first_designer,institute_name,other_designer,patent_num,confirm_date,apply_date,grant_date,isgrant,agency,patent_id,grant_inform_image,certificate_image from patent_institute where");
             if (patentnum != "")
                 sql.AppendLine(" patent_num = '" + patentnum + "' and");
@@ -318,13 +322,22 @@ namespace MyProject
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
+           // gifullname = this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
+          //  cifullname = this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
+
             ColImageGrant.Text = "查看";//设置了TEXT的值，
             ColImageGrant.UseColumnTextForButtonValue = true;//设置了这个属性
             ColImageCertificate.Text = "查看";//设置了TEXT的值，
             ColImageCertificate.UseColumnTextForButtonValue = true;//设置了这个属性
+            
             dt = Program.GetDataTable(sql.ToString());
+           
             dataGridView1.DataSource = dt;
+            
             DataRow dr = dt.Rows[0];
+            DataRow dr1 = dt.Rows[dataGridView1.CurrentRow.Index];
+            gifullname = dr1["grant_inform_image"].ToString();
+            cifullname = dr1["certificate_image"].ToString();
             DataGridViewRow dgvr = new DataGridViewRow();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -1057,8 +1070,8 @@ namespace MyProject
             UpdateClass.ugrant_date = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
             UpdateClass.uisgrant = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString();
             UpdateClass.uagency = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
-            UpdateClass.ugifullname = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[11].Value.ToString();
-            UpdateClass.ucifullname = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[12].Value.ToString();
+            UpdateClass.ugifullname = gifullname;
+            UpdateClass.ucifullname = cifullname;
             FrmAdd updatefrm = new FrmAdd(this);
             updatefrm.Show();
            
@@ -1073,6 +1086,19 @@ namespace MyProject
 
         private void label14_Click(object sender, EventArgs e)
         {
+
+        }
+       
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            // DataGridViewRow dgvr = new DataGridViewRow();
+            // dgvr = e.RowIndex.ToString();
+            if (e.ColumnIndex == dataGridView1.Columns[12].Index || e.ColumnIndex == dataGridView1.Columns[13].Index)
+                
+                if (!this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString().Equals("无"))
+                    try { System.Diagnostics.Process.Start(gifullname); }
+                    catch { MessageBox.Show("没有成功插入相关的图片"); }
 
         }
     }

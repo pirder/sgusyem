@@ -57,9 +57,9 @@ namespace MyProject
             ciFullname = UpdateClass.ucifullname;
         }
         //受理通知书图片
-        string grant_inform_image = "";
+        string grant_inform_image = "无";
         //证书图片
-        string certificate_image = "";
+        string certificate_image = "无";
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -89,8 +89,8 @@ namespace MyProject
             return ReturnResult;
         }
 
-        string giFullname = "";//图片地址
-        string ciFullname = "";
+        string giFullname = "无";//图片地址
+        string ciFullname = "无";
 
         public static byte[] SavaImage(OpenFileDialog OpenF)//图片封装
         {
@@ -151,19 +151,19 @@ namespace MyProject
                 gd = "NULL";
             if (patentckb.Checked == true)
                 cd = "NULL";
-            if (giFullname != "")
+            if (giFullname != "无")
             {
                 File.Copy(giFullname, grant_inform_image,true);
             }
             else {
-                grant_inform_image = "";
+                grant_inform_image = "无";
             }
-            if (ciFullname != "")
+            if (ciFullname != "无")
             {
                 File.Copy(ciFullname, certificate_image,true);
             }
             else {
-                certificate_image = "";
+                certificate_image = "无";
             }
             string sql = string.Format("insert into patent(patent_name,patent_type,first_designer,patent_num,confirm_date,apply_date,grant_date,other_designer,agency,institute_num,grant_inform_image,certificate_image,isgrant) values('{0}','{1}','{2}','{3}',{4},{5},{6},'{7}','{8}','{9}','{10}','{11}','{12}')", patent_name.Text,patent_type.Text,first_designer.Text,patent_num.Text, cd, ad, gd,other_designer.Text,agency.Text,id + 1,grant_inform_image,certificate_image,comboBox2.SelectedIndex.ToString());
             bool result = ExecuteSql(sql);
@@ -175,10 +175,10 @@ namespace MyProject
             {
                 MessageBox.Show("插入失败");
             }
-         grant_inform_image = "";
-         certificate_image  = "";
-         giFullname = "";//图片地址
-         ciFullname = "";
+         grant_inform_image = "无";
+         certificate_image  = "无";
+         giFullname = "无";//图片地址
+         ciFullname = "无";
         }
 
         private void apply_date_ValueChanged(object sender, EventArgs e)
@@ -228,7 +228,7 @@ namespace MyProject
             {
                 
                 string str = Application.StartupPath;
-                path2 = str.Substring(0, str.Length - 10) + "\\"+picturetype+"\\"+""+patent_name.Text+""+picturetype+".docx";
+                path2 = str.Substring(0, str.Length - 10) + "\\"+picturetype+"\\"+""+patent_name.Text+""+picturetype+".doc";
                 //   File.Copy(FullName, path2, true);
                 if (picturetype == "grant_inform_image")
                     giFullname = FullName;
@@ -237,7 +237,7 @@ namespace MyProject
             }
             else {
                 MessageBox.Show("请选择正确的文件类型");
-                path2 = "";
+                path2 = "无";
             }
             return path2;
         }
@@ -285,21 +285,21 @@ namespace MyProject
             if (patentckb.Checked == true)
                 cd = "NULL";
 
-            if (giFullname != ""&&grant_inform_image!="")
+            if (giFullname != "无" && grant_inform_image!= "无")
             {
                 File.Copy(giFullname, grant_inform_image, true);
             }
             else
             {
-                grant_inform_image = "";
+                grant_inform_image = "无";
             }
-            if (ciFullname != ""&&certificate_image!="")
+            if (ciFullname != "无" && certificate_image!= "无")
             {
                 File.Copy(ciFullname, certificate_image, true);
             }
             else
             {
-                certificate_image = "";
+                certificate_image = "无";
             }
             string sql = string.Format("update patent set patent_name='{0}',patent_type='{1}',first_designer='{2}',patent_num='{3}',confirm_date={4},apply_date={5},grant_date={6},other_designer='{7}',agency='{8}',institute_num='{9}',grant_inform_image='{10}',certificate_image='{11}',isgrant='{12}' where patent_name='" + patent_name.Text + "';", patent_name.Text, patent_type.Text, first_designer.Text, patent_num.Text, cd, ad, gd, other_designer.Text, agency.Text, id + 1, grant_inform_image, certificate_image, comboBox2.Text.ToString());
             //注意合并后两者数据库设计命名不符
@@ -312,10 +312,10 @@ namespace MyProject
             {
                 MessageBox.Show("修改失败");
             }
-            grant_inform_image = "";
-            certificate_image = "";
-            giFullname = "";//图片地址
-            ciFullname = "";
+            grant_inform_image = "无";
+            certificate_image = "无";
+            giFullname = "无";//图片地址
+            ciFullname = "无";
             this.Close();
         }
 
