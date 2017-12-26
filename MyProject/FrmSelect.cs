@@ -1036,6 +1036,8 @@ namespace MyProject
             UpdateClass.ucifullname = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[12].Value.ToString();
             FrmAdd updatefrm = new FrmAdd(this);
             updatefrm.Show();
+           
+
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

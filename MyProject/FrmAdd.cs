@@ -27,6 +27,7 @@ namespace MyProject
         {
             this.f1 = f1;
             InitializeComponent();
+            
             addbtn.Visible = false;
             updatebtn.Visible = true;
             this.Text = "修改专利";
@@ -300,7 +301,7 @@ namespace MyProject
             {
                 certificate_image = "";
             }
-            string sql = string.Format("update patent set patent_name='{0}',patent_type='{1}',first_designer='{2}',patent_num='{3}',confirm_date={4},apply_date={5},grant_date={6},other_designer='{7}',agency='{8}',institute_num='{9}',grant_inform_image='{10}',certificate_image='{11}',isgrant='{12}' where patent_name='" + patent_name.Text + "';", patent_name.Text, patent_type.Text, first_designer.Text, patent_num.Text, cd, ad, gd, other_designer.Text, agency.Text, id + 1, grant_inform_image, certificate_image, comboBox2.SelectedIndex.ToString());
+            string sql = string.Format("update patent set patent_name='{0}',patent_type='{1}',first_designer='{2}',patent_num='{3}',confirm_date={4},apply_date={5},grant_date={6},other_designer='{7}',agency='{8}',institute_num='{9}',grant_inform_image='{10}',certificate_image='{11}',isgrant='{12}' where patent_name='" + patent_name.Text + "';", patent_name.Text, patent_type.Text, first_designer.Text, patent_num.Text, cd, ad, gd, other_designer.Text, agency.Text, id + 1, grant_inform_image, certificate_image, comboBox2.Text.ToString());
             //注意合并后两者数据库设计命名不符
             bool result = ExecuteSql(sql);
             if (result)
@@ -315,6 +316,7 @@ namespace MyProject
             certificate_image = "";
             giFullname = "";//图片地址
             ciFullname = "";
+            this.Close();
         }
 
         private void appckb_CheckedChanged(object sender, EventArgs e)
