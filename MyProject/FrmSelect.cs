@@ -318,19 +318,31 @@ namespace MyProject
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
+            ColImageGrant.Text = "查看";//设置了TEXT的值，
+            ColImageGrant.UseColumnTextForButtonValue = true;//设置了这个属性
+            ColImageCertificate.Text = "查看";//设置了TEXT的值，
+            ColImageCertificate.UseColumnTextForButtonValue = true;//设置了这个属性
             dt = Program.GetDataTable(sql.ToString());
+            dataGridView1.DataSource = dt;
             DataRow dr = dt.Rows[0];
+            DataGridViewRow dgvr = new DataGridViewRow();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 dr = dt.Rows[i];
-                if (dr["institute_name"].ToString().Equals("无"))
+                dgvr = dataGridView1.Rows[i];
+                if (dr["grant_inform_image"].ToString().Equals("无"))
                 {
-                    DataGridViewButtonCell dgvbc = new DataGridViewButtonCell();
-                    dgvbc.Value = "查看";
-                    dataGridView1.Rows[i].Cells["institute_name"] = dgvbc;
+                    DataGridViewTextBoxCell dgvbc = new DataGridViewTextBoxCell();
+                    dgvbc.Value = "无";
+                    dgvr.Cells[12] = dgvbc;
+                }
+                if (dr["certificate_image"].ToString().Equals("无"))
+                {
+                    DataGridViewTextBoxCell dgvbc = new DataGridViewTextBoxCell();
+                    dgvbc.Value = "无";
+                    dgvr.Cells[13] = dgvbc;
                 }
             }
-            dataGridView1.DataSource = dt;
             //  dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(81, 125, 191);
             if (dataGridView1.Rows.Count == 0)              
