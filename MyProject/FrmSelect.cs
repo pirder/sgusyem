@@ -319,7 +319,7 @@ namespace MyProject
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
             dt = Program.GetDataTable(sql.ToString());
-            DataGridViewRow dr = new DataGridViewRow();
+            DataRow dr = dt.Rows[0];
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 dr = dt.Rows[i];
@@ -327,10 +327,10 @@ namespace MyProject
                 {
                     DataGridViewButtonCell dgvbc = new DataGridViewButtonCell();
                     dgvbc.Value = "查看";
-                    dr.Cells.Add(dgvbc);
+                    dataGridView1.Rows[i].Cells["institute_name"] = dgvbc;
                 }
-                    comboInstitute.Items.Add(instituteName);
             }
+            dataGridView1.DataSource = dt;
             //  dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(81, 125, 191);
             if (dataGridView1.Rows.Count == 0)              
