@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace MyProject
 {
@@ -91,6 +92,16 @@ namespace MyProject
             InitializeComponent();
             this.limit = limit;
             statusStripUserName.Text = name;
+        }
+      
+ 
+
+public void theout(object source, System.Timers.ElapsedEventArgs e)
+
+        {
+
+            MessageBox.Show("OK!");
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -1084,7 +1095,7 @@ namespace MyProject
             UpdateClass.ucifullname = cifullname;
             FrmAdd updatefrm = new FrmAdd(this);
             updatefrm.Show();
-           
+            timer1.Enabled = true;
 
         }
 
@@ -1178,6 +1189,28 @@ namespace MyProject
             if (limit == 1) //如果为普通用户直接退出软件；
                 Application.Exit();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+          //  MessageBox.Show("0000000");
+            btnSearch_Click(null, null);
+          //  
+        }
+
+        private void dataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
+
+        // System.Timers.Timer t1 = new System.Timers.Timer(10000);//实例化Timer类，设置间隔时间为10000毫秒；
+        // System.Windows.Forms.Timer t = new System.Windows.Forms.Timer(10000);
+        // t.Elapsed += new System.Timers.ElapsedEventHandler(Timeout);//到达时间的时候执行事件；
+
+        // t.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+
+        // t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+
     }
 }
     

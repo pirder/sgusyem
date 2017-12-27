@@ -316,7 +316,9 @@ namespace MyProject
             certificate_image = "无";
             giFullname = "无";//图片地址
             ciFullname = "无";
+
             this.Close();
+
         }
 
         private void appckb_CheckedChanged(object sender, EventArgs e)
