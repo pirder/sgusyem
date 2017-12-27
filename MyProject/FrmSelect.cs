@@ -1172,6 +1172,12 @@ namespace MyProject
                 MessageBox.Show(ex.Message, "错误提示");
             }
         }
+
+        private void FrmSelect_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (limit == 1) //如果为普通用户直接退出软件；
+                Application.Exit();
+        }
     }
 }
     

@@ -1025,26 +1025,26 @@
             this.修改ToolStripMenuItem,
             this.新增ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 82);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // 修改ToolStripMenuItem
             // 
             this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
-            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
             // 
             // 新增ToolStripMenuItem
             // 
             this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
-            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.新增ToolStripMenuItem.Text = "新增";
             this.新增ToolStripMenuItem.Click += new System.EventHandler(this.新增ToolStripMenuItem_Click);
             // 
@@ -1068,6 +1068,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSelect";
             this.Text = "数据查询";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmSelect_FormClosed);
             this.Load += new System.EventHandler(this.FrmSelect_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
