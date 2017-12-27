@@ -20,7 +20,6 @@ namespace MyProject
         public FrmSelect()
         {
             InitializeComponent();
-
             string sqlinstitutecombo = "select institute_name from institute";
             DataTable dt = new DataTable();
             dt = Program.GetDataTable(sqlinstitutecombo);
@@ -71,26 +70,149 @@ namespace MyProject
         {
             InitializeComponent();
             this.limit = limit;
+            string sqlinstitutecombo = "select institute_name from institute";
             string sql = "select users_name from users where users_num = '" + num + "'";
             DataTable dt = new DataTable();
+            DataTable dt3 = new DataTable();
             dt = Program.GetDataTable(sql);
             DataRow dr = dt.Rows[0];
             string userName = dr["users_name"].ToString();
             toolStripStatusLabel1.Text = "欢迎用户:" + userName + "进入韶关学院知识产权查询系统";
+            dt3 = Program.GetDataTable(sqlinstitutecombo);
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                dr = dt3.Rows[i];
+                string instituteName = dr["institute_name"].ToString();
+                comboInstitute.Items.Add(instituteName);
+            }
+            string sqlpatenttype = "select distinct patent_type from patent_institute";
+            DataTable dt1 = new DataTable();
+            dt1 = Program.GetDataTable(sqlpatenttype);
+            DataRow dr1 = dt1.Rows[0];
+            for (int i = 0; i < dt1.Rows.Count; i++)
+            {
+                dr1 = dt1.Rows[i];
+                string patenttypeName = dr1["patent_type"].ToString();
+                comboPatentType.Items.Add(patenttypeName);
+            }
+            string sqlagency = "select distinct agency from patent_institute";
+            DataTable dt2 = new DataTable();
+            dt2 = Program.GetDataTable(sqlagency);
+            DataRow dr2 = dt2.Rows[0];
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                dr2 = dt2.Rows[i];
+                string agencyName = dr2["agency"].ToString();
+                comboAgency.Items.Add(agencyName);
+            }
+            for (int i = 1980; i < 3000; i++)
+                comboApplyDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboApplyDateEndYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboComfirmDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboComfirmDateEndYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboGrantDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboGrantDateEndYear.Items.Add(i);
         }
 
         public FrmSelect(int a, string name)
         {
             InitializeComponent();
-
             statusStripUserName.Text = name;
+            string sqlinstitutecombo = "select institute_name from institute";
+            DataTable dt = new DataTable();
+            dt = Program.GetDataTable(sqlinstitutecombo);
+            DataRow dr = dt.Rows[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dr = dt.Rows[i];
+                string instituteName = dr["institute_name"].ToString();
+                comboInstitute.Items.Add(instituteName);
+            }
+            string sqlpatenttype = "select distinct patent_type from patent_institute";
+            DataTable dt1 = new DataTable();
+            dt1 = Program.GetDataTable(sqlpatenttype);
+            DataRow dr1 = dt1.Rows[0];
+            for (int i = 0; i < dt1.Rows.Count; i++)
+            {
+                dr1 = dt1.Rows[i];
+                string patenttypeName = dr1["patent_type"].ToString();
+                comboPatentType.Items.Add(patenttypeName);
+            }
+            string sqlagency = "select distinct agency from patent_institute";
+            DataTable dt2 = new DataTable();
+            dt2 = Program.GetDataTable(sqlagency);
+            DataRow dr2 = dt2.Rows[0];
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                dr2 = dt2.Rows[i];
+                string agencyName = dr2["agency"].ToString();
+                comboAgency.Items.Add(agencyName);
+            }
+            for (int i = 1980; i < 3000; i++)
+                comboApplyDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboApplyDateEndYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboComfirmDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboComfirmDateEndYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboGrantDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboGrantDateEndYear.Items.Add(i);
         }
         public FrmSelect(int a, string name, int limit)
         {
-
             InitializeComponent();
             this.limit = limit;
             statusStripUserName.Text = name;
+            string sqlinstitutecombo = "select institute_name from institute";
+            DataTable dt = new DataTable();
+            dt = Program.GetDataTable(sqlinstitutecombo);
+            DataRow dr = dt.Rows[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dr = dt.Rows[i];
+                string instituteName = dr["institute_name"].ToString();
+                comboInstitute.Items.Add(instituteName);
+            }
+            string sqlpatenttype = "select distinct patent_type from patent_institute";
+            DataTable dt1 = new DataTable();
+            dt1 = Program.GetDataTable(sqlpatenttype);
+            DataRow dr1 = dt1.Rows[0];
+            for (int i = 0; i < dt1.Rows.Count; i++)
+            {
+                dr1 = dt1.Rows[i];
+                string patenttypeName = dr1["patent_type"].ToString();
+                comboPatentType.Items.Add(patenttypeName);
+            }
+            string sqlagency = "select distinct agency from patent_institute";
+            DataTable dt2 = new DataTable();
+            dt2 = Program.GetDataTable(sqlagency);
+            DataRow dr2 = dt2.Rows[0];
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                dr2 = dt2.Rows[i];
+                string agencyName = dr2["agency"].ToString();
+                comboAgency.Items.Add(agencyName);
+            }
+            for (int i = 1980; i < 3000; i++)
+                comboApplyDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboApplyDateEndYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboComfirmDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboComfirmDateEndYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboGrantDateStartYear.Items.Add(i);
+            for (int i = 1980; i < 3000; i++)
+                comboGrantDateEndYear.Items.Add(i);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
