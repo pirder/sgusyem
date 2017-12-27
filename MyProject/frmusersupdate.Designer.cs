@@ -148,6 +148,7 @@
             this.Controls.Add(this.label6);
             this.Name = "frmusersupdate";
             this.Text = "修改用户";
+            this.Load += new System.EventHandler(this.frmusersupdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

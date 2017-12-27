@@ -15,10 +15,12 @@ namespace MyProject
         
         public frmusersupdate()
         {
+            
+            InitializeComponent();
             txtUpdateName.Text = UpdateClass.uusername;
             txtUpdatePassword.Text = UpdateClass.uuserpassword;
             txtUpdateNum.Text = UpdateClass.uusernum;
-            InitializeComponent();
+           
         }
 
         private void btnRegisterComfirm_Click(object sender, EventArgs e)
@@ -28,15 +30,21 @@ namespace MyProject
             string userPassword = txtUpdatePassword.Text;
             string userNum = txtUpdateNum.Text;
             bool result = false;
-            string sqlUpdate = string.Format("update users set  users_name='{0}',users_num='{1}',users_password='{2}' where users_name='{3}' ;", userName, userNum, userPassword, userNum);
+            string sqlUpdate = string.Format("update users set  users_name='{0}',users_num='{1}',users_password='{2}' where users_name='{3}';",userName,userNum,userPassword, userName);
             result = Program.ExecuteSql(sqlUpdate);
             if (result)
             {
                 MessageBox.Show("修改成功");
             }
-            else {
+            else
+            {
                 MessageBox.Show("修改失败");
             }
+        }
+
+        private void frmusersupdate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

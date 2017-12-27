@@ -93,6 +93,8 @@ namespace MyProject
             UpdateClass.uusername = dataGridViewUser.Rows[dataGridViewUser.CurrentCell.RowIndex].Cells[0].Value.ToString();
             UpdateClass.uusernum = dataGridViewUser.Rows[dataGridViewUser.CurrentCell.RowIndex].Cells[1].Value.ToString();
             UpdateClass.uuserpassword = dataGridViewUser.Rows[dataGridViewUser.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            frmusersupdate f = new frmusersupdate();
+            f.Show();
         }
     }
 }
