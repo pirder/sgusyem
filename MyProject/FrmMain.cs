@@ -13,9 +13,21 @@ namespace MyProject
 {
     public partial class FrmMain : Form
     {
+        int  limit = 1;
         public FrmMain(string num)
         {
             InitializeComponent();
+            string sql = "select users_name from users where users_num = '" + num + "'";
+            DataTable dt = new DataTable();
+            dt = Program.GetDataTable(sql);
+            DataRow dr = dt.Rows[0];
+            string userName = dr["users_name"].ToString();
+            toolStripMain.Text = "欢迎用户:" + userName + "进入韶关学院知识产权管理员管理系统";
+        }
+        public FrmMain(string num,int  limit)
+        {
+            InitializeComponent();
+            this.limit = limit;
             string sql = "select users_name from users where users_num = '" + num + "'";
             DataTable dt = new DataTable();
             dt = Program.GetDataTable(sql);
@@ -27,7 +39,7 @@ namespace MyProject
         private void 数据查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int i = 0;
-            FrmSelect f = new FrmSelect(i,toolStripMain.Text);
+            FrmSelect f = new FrmSelect(i,toolStripMain.Text,limit);
             f.Show();
 
         }
@@ -66,7 +78,7 @@ namespace MyProject
         private void button3_Click(object sender, EventArgs e)
         {
             int i = 0;
-            FrmSelect f = new FrmSelect(i, toolStripMain.Text);
+            FrmSelect f = new FrmSelect(i, toolStripMain.Text,limit);
             f.Show();
         }      
     }

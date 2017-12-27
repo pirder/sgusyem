@@ -80,7 +80,7 @@ namespace MyProject
                     cfa.AppSettings.Settings["usernum"].Value = userNum;
                     cfa.Save();
                     ConfigurationManager.RefreshSection("appSettings");
-                    FrmMain f = new FrmMain(userNum);
+                    FrmMain f = new FrmMain(userNum,limit);
                     f.Show();
                     this.Hide();
                 }
@@ -109,7 +109,7 @@ namespace MyProject
                     cfa.AppSettings.Settings["usernum"].Value = userNum;
                     cfa.Save();
                     ConfigurationManager.RefreshSection("appSettings");
-                    FrmSelect f = new FrmSelect(userNum);
+                    FrmSelect f = new FrmSelect(userNum,limit);
                     f.Show();
                     this.Hide();
                 }

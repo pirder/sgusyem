@@ -14,12 +14,13 @@ namespace MyProject
 {
     public partial class FrmSelect : Form
     {
+        int limit = 1;
         string gifullname = "无";
         string cifullname = "无";
         public FrmSelect()
         {
             InitializeComponent();
-            
+
             string sqlinstitutecombo = "select institute_name from institute";
             DataTable dt = new DataTable();
             dt = Program.GetDataTable(sqlinstitutecombo);
@@ -63,12 +64,13 @@ namespace MyProject
             for (int i = 1980; i < 3000; i++)
                 comboGrantDateEndYear.Items.Add(i);
             System.Drawing.Drawing2D.GraphicsPath myGraphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-            
+
         }
 
-        public FrmSelect(string num)
+        public FrmSelect(string num,int limit)
         {
             InitializeComponent();
+            this.limit = limit;
             string sql = "select users_name from users where users_num = '" + num + "'";
             DataTable dt = new DataTable();
             dt = Program.GetDataTable(sql);
@@ -80,6 +82,14 @@ namespace MyProject
         public FrmSelect(int a, string name)
         {
             InitializeComponent();
+
+            statusStripUserName.Text = name;
+        }
+        public FrmSelect(int a, string name, int limit)
+        {
+
+            InitializeComponent();
+            this.limit = limit;
             statusStripUserName.Text = name;
         }
 
@@ -87,7 +97,7 @@ namespace MyProject
         {
             StringBuilder sql = new StringBuilder();
             StringBuilder date = new StringBuilder();
-            DataTable dt = new DataTable();          
+            DataTable dt = new DataTable();
             string patentnum = txtPatentNum.Text;
             string patenttype = comboPatentType.Text;
             string designer = txtDesiner.Text;
@@ -111,7 +121,7 @@ namespace MyProject
             string grantdateendmonth = comboGrantDateEndMonth.Text;
             string grantdateendday = comboGrantDateEndDay.Text;
             string agency = comboAgency.Text;
-           
+
 
             sql.AppendLine("select patent_name,patent_type,first_designer,institute_name,other_designer,patent_num,confirm_date,apply_date,grant_date,isgrant,agency,patent_id,grant_inform_image,certificate_image from patent_institute where");
             if (patentnum != "")
@@ -322,18 +332,18 @@ namespace MyProject
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
             sql.Remove(sql.Length - 3, 1);
-           // gifullname = this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
-          //  cifullname = this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
+            // gifullname = this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
+            //  cifullname = this.dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[dataGridView1.CurrentCell.ColumnIndex].Value.ToString();
 
             ColImageGrant.Text = "查看";//设置了TEXT的值，
             ColImageGrant.UseColumnTextForButtonValue = true;//设置了这个属性
             ColImageCertificate.Text = "查看";//设置了TEXT的值，
             ColImageCertificate.UseColumnTextForButtonValue = true;//设置了这个属性
-            
+
             dt = Program.GetDataTable(sql.ToString());
-           
+
             dataGridView1.DataSource = dt;
-            
+
             DataRow dr = dt.Rows[0];
             DataRow dr1 = dt.Rows[dataGridView1.CurrentRow.Index];
             gifullname = dr1["grant_inform_image"].ToString();
@@ -358,15 +368,15 @@ namespace MyProject
             }
             //  dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(81, 125, 191);
-            if (dataGridView1.Rows.Count == 0)              
+            if (dataGridView1.Rows.Count == 0)
                 MessageBox.Show("没有符合条件的数据");
         }
-      
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int year = 0;
             comboApplyDateStartDay.Text = "";
-            if(comboApplyDateStartYear.Text!="")
+            if (comboApplyDateStartYear.Text != "")
                 year = Convert.ToInt32(comboApplyDateStartYear.Text);
             if (comboApplyDateStartMonth.Text == "2")
             {
@@ -459,8 +469,8 @@ namespace MyProject
         {
             int year = 0;
             comboApplyDateStartDay.Text = "";
-            if(comboApplyDateEndYear.Text!="")
-               year = Convert.ToInt32(comboApplyDateEndYear.Text);
+            if (comboApplyDateEndYear.Text != "")
+                year = Convert.ToInt32(comboApplyDateEndYear.Text);
             if (comboApplyDateEndMonth.Text == "2")
             {
                 if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
@@ -552,8 +562,8 @@ namespace MyProject
         {
             int year = 0;
             comboComfirmDateStartDay.Text = "";
-            if(comboComfirmDateStartYear.Text!="")
-               year = Convert.ToInt32(comboComfirmDateStartYear.Text);
+            if (comboComfirmDateStartYear.Text != "")
+                year = Convert.ToInt32(comboComfirmDateStartYear.Text);
             if (comboComfirmDateStartMonth.Text == "2")
             {
                 if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
@@ -628,12 +638,12 @@ namespace MyProject
                     break;
             }
         }
-        
+
         private void comboComfirmDateEndMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             int year = 0;
             comboComfirmDateEndDay.Text = "";
-            if(comboComfirmDateEndYear.Text!="")
+            if (comboComfirmDateEndYear.Text != "")
                 year = Convert.ToInt32(comboComfirmDateEndYear.Text);
             if (comboComfirmDateEndMonth.Text == "2")
             {
@@ -726,7 +736,7 @@ namespace MyProject
         {
             int year = 0;
             comboGrantDateStartDay.Text = "";
-            if(comboGrantDateStartYear.Text!="")
+            if (comboGrantDateStartYear.Text != "")
                 year = Convert.ToInt32(comboGrantDateStartYear.Text);
             if (comboGrantDateStartMonth.Text == "2")
             {
@@ -807,7 +817,7 @@ namespace MyProject
         {
             int year = 0;
             comboGrantDateEndDay.Text = "";
-            if(comboGrantDateEndYear.Text!="")
+            if (comboGrantDateEndYear.Text != "")
                 year = Convert.ToInt32(comboGrantDateEndYear.Text);
             if (comboGrantDateEndMonth.Text == "2")
             {
@@ -896,12 +906,12 @@ namespace MyProject
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             SetClassLong(this.Handle, GCL_STYLE, GetClassLong(this.Handle, GCL_STYLE) | CS_DropSHADOW);
         }
-           
+
         private Point offset;
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
-            
+
             if (MouseButtons.Left != e.Button) return;
             Point cur = MousePosition;
             this.Location = new Point(cur.X - offset.X, cur.Y - offset.Y);
@@ -923,8 +933,8 @@ namespace MyProject
         {
             this.Close();
             this.Dispose();
-           // Application.Exit();
-             
+            // Application.Exit();
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -937,7 +947,7 @@ namespace MyProject
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            pictureBox3.Visible =true;
+            pictureBox3.Visible = true;
             pictureBox5.Visible = false;
         }
 
@@ -985,7 +995,7 @@ namespace MyProject
         {
             pictureBox2.BackColor = Color.FromArgb(113, 159, 215);
         }
-         
+
         private void label15_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -998,7 +1008,7 @@ namespace MyProject
 
         private void label15_MouseLeave(object sender, EventArgs e)
         {
-            selectexitbtn.BackColor = Color.FromArgb(255, 255,255);
+            selectexitbtn.BackColor = Color.FromArgb(255, 255, 255);
         }
 
         private void label14_MouseEnter(object sender, EventArgs e)
@@ -1019,7 +1029,7 @@ namespace MyProject
         //右键获得单元格的选定
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right&&limit==2)
             {
                 if (e.RowIndex >= 0)
                 {
