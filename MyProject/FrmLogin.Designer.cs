@@ -58,22 +58,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(88, 100);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 15);
+            this.label2.Size = new System.Drawing.Size(89, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "手 机 号：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label3.Location = new System.Drawing.Point(88, 161);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "密    码：";
             // 
@@ -117,10 +119,11 @@
             // 
             this.btnManager.AutoSize = true;
             this.btnManager.Checked = true;
+            this.btnManager.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnManager.Location = new System.Drawing.Point(109, 244);
             this.btnManager.Margin = new System.Windows.Forms.Padding(4);
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(103, 19);
+            this.btnManager.Size = new System.Drawing.Size(108, 19);
             this.btnManager.TabIndex = 13;
             this.btnManager.TabStop = true;
             this.btnManager.Text = "超级管理员";
@@ -129,16 +132,18 @@
             // btnUser
             // 
             this.btnUser.AutoSize = true;
+            this.btnUser.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUser.Location = new System.Drawing.Point(277, 244);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(88, 19);
+            this.btnUser.Size = new System.Drawing.Size(92, 19);
             this.btnUser.TabIndex = 14;
             this.btnUser.Text = "一般用户";
             this.btnUser.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
+            this.btnLogin.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogin.Location = new System.Drawing.Point(109, 332);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
@@ -150,6 +155,7 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRegister.Location = new System.Drawing.Point(277, 332);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
