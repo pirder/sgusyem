@@ -68,6 +68,6 @@ namespace MyProject
             int i = 0;
             FrmSelect f = new FrmSelect(i, toolStripMain.Text);
             f.Show();
-        }
+        }      
     }
 }
