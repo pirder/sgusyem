@@ -12,9 +12,7 @@ using System.Data.OleDb;
 namespace keyanchu
 {  
     public partial class Login : Form
-    {
-        private OleDbConnection _oleDbConn;
-        private OleDbDataAdapter _oleDbAda;
+    {       
         public Login()
         {
             InitializeComponent();

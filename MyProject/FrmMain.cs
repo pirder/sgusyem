@@ -55,5 +55,19 @@ namespace MyProject
             f.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            FrmSelect f = new FrmSelect(i, toolStripMain.Text);
+            f.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            FrmSelect f = new FrmSelect(i, toolStripMain.Text);
+            f.Show();
+        }
     }
 }

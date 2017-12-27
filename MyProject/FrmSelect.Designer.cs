@@ -111,9 +111,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.selectimportexcelbtn = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.selectexitbtn = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -978,20 +978,20 @@
             this.pictureBox6.TabIndex = 13;
             this.pictureBox6.TabStop = false;
             // 
-            // label14
+            // selectimportexcelbtn
             // 
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(49)))), ((int)(((byte)(152)))));
-            this.label14.Location = new System.Drawing.Point(455, 259);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(159, 40);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "导 出 数 据";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            this.label14.MouseEnter += new System.EventHandler(this.label14_MouseEnter);
-            this.label14.MouseLeave += new System.EventHandler(this.label14_MouseLeave);
+            this.selectimportexcelbtn.BackColor = System.Drawing.Color.White;
+            this.selectimportexcelbtn.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.selectimportexcelbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(49)))), ((int)(((byte)(152)))));
+            this.selectimportexcelbtn.Location = new System.Drawing.Point(455, 259);
+            this.selectimportexcelbtn.Name = "selectimportexcelbtn";
+            this.selectimportexcelbtn.Size = new System.Drawing.Size(159, 40);
+            this.selectimportexcelbtn.TabIndex = 14;
+            this.selectimportexcelbtn.Text = "导 出 数 据";
+            this.selectimportexcelbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.selectimportexcelbtn.Click += new System.EventHandler(this.selectimportexcelbtn_Click);
+            this.selectimportexcelbtn.MouseEnter += new System.EventHandler(this.label14_MouseEnter);
+            this.selectimportexcelbtn.MouseLeave += new System.EventHandler(this.label14_MouseLeave);
             // 
             // pictureBox7
             // 
@@ -1003,19 +1003,19 @@
             this.pictureBox7.TabIndex = 15;
             this.pictureBox7.TabStop = false;
             // 
-            // label15
+            // selectexitbtn
             // 
-            this.label15.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(49)))), ((int)(((byte)(152)))));
-            this.label15.Location = new System.Drawing.Point(657, 259);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(159, 40);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "退 出 系 统";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            this.label15.MouseEnter += new System.EventHandler(this.label15_MouseEnter);
-            this.label15.MouseLeave += new System.EventHandler(this.label15_MouseLeave);
+            this.selectexitbtn.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.selectexitbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(49)))), ((int)(((byte)(152)))));
+            this.selectexitbtn.Location = new System.Drawing.Point(657, 259);
+            this.selectexitbtn.Name = "selectexitbtn";
+            this.selectexitbtn.Size = new System.Drawing.Size(159, 40);
+            this.selectexitbtn.TabIndex = 16;
+            this.selectexitbtn.Text = "退 出 系 统";
+            this.selectexitbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.selectexitbtn.Click += new System.EventHandler(this.label15_Click);
+            this.selectexitbtn.MouseEnter += new System.EventHandler(this.label15_MouseEnter);
+            this.selectexitbtn.MouseLeave += new System.EventHandler(this.label15_MouseLeave);
             // 
             // contextMenuStrip1
             // 
@@ -1054,9 +1054,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1234, 575);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.selectexitbtn);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.selectimportexcelbtn);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel2);
@@ -1244,9 +1244,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label selectimportexcelbtn;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label selectexitbtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPatentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPatentType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstDesigner;
