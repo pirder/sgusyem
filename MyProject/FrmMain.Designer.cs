@@ -88,6 +88,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(125)))), ((int)(((byte)(191)))));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMain,
@@ -206,7 +207,6 @@
             this.label3.Size = new System.Drawing.Size(116, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "修改专利";
-           // this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
