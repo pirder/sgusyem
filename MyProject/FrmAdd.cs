@@ -218,7 +218,7 @@ namespace MyProject
         
         private string addpic(string picturetype)
         {
-            string path1, path2;
+            string path2;
             openFileDialog1.ShowDialog();
             string FullName = openFileDialog1.FileName;//获取word物理地址
             FileInfo fi = new FileInfo(FullName);
